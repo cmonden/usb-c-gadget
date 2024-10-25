@@ -16,5 +16,4 @@ With this enabled all the same script from the Pi Zero’s should just work but 
 - Add `libcomposite` to `/etc/modules`
 - Add `denyinterfaces usb0` to `/etc/dhcpcd.conf`
 - Install dnsmasq with `sudo apt-get install dnsmasq`
-- Create `/etc/dnsmasq.d/usb` with following content
-- 
+
