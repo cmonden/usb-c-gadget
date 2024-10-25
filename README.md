@@ -17,3 +17,10 @@ With this enabled all the same script from the Pi Zero’s should just work but 
 - Add `denyinterfaces usb0` to `/etc/dhcpcd.conf`
 - Install dnsmasq with `sudo apt-get install dnsmasq`
 
+- Create `/etc/dnsmasq.d/usb` 
+- Create `/etc/network/interfaces.d/usb0`
+- Create `/root/usb.sh`
+- Make `/root/usb.sh` executable with `chmod +x /root/usb.sh`
+- Add `/root/usb.sh` to `/etc/rc.local` before `exit 0` (I really should add a systemd startup script here at some point)
+
+With this setup the Pi4 will show up as a ethernet device with an IP address of 10.55.0.1 and will assign the device you plug it into an IP address via DHCP. This means you can just ssh to pi@10.55.0.1 to start using it.
